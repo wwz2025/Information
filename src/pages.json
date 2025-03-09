@@ -1,0 +1,557 @@
+{
+	"easycom":
+	{
+		//easycom方式引入的组件无需在页面内import，也不需要在components内声明，即可在任意页面使用.easycom方式引入组件不是全局引入，而是局部引入。
+		"autoscan": true, //是否自动扫描组件
+		"custom": {//自定义扫描规则
+					"^u-(.*)": "@/components/uview-ui/components/u-$1/u-$1.vue"
+					/* ,"^uni-(.*)": "@/components/uni-$1/uni-$1.vue" */
+		    }
+	},
+	"pages": [
+		// 主页
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"onReachBottomDistance": 50,
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false,
+					"pullToRefresh": {
+						"support": true,
+						"color": "#0081ff",
+						"style": "default"
+					}
+				}
+			}
+		},
+
+		// 公告
+		{
+			"path": "pages/index/notice/notice",
+			"style": {
+				"enablePullDownRefresh": true,
+				"navigationBarTitleText": "公告",
+				"app-plus": {
+					"pullToRefresh": {
+						"support": true,
+						"color": "#0081ff",
+						"style": "default"
+					}
+				}
+			}
+		},
+		// 公告详情
+		{
+			"path": "pages/index/notice/detail",
+			"style": {
+				"navigationBarTitleText": "公告详情"
+			}
+		},
+		// 商品搜索
+		{
+			"path": "pages/index/search/search",
+			"style": {
+				"navigationBarTitleText": "搜索"
+			}
+		},
+
+		// 我的
+		{
+			"path": "pages/profile/profile",
+			"style": {
+				"navigationBarTitleText": "我的",
+				// #ifdef MP
+				"navigationStyle": "custom",
+				// #endif
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": {
+						"type": "transparent",
+						"buttons": [{
+								"fontSrc": "/static/iconfont.ttf",
+								"text": "\ue658",
+								"fontSize": "28",
+								"color": "#303133",
+								"width": "42px",
+								"background": "rgba(0,0,0,0)"
+							},
+							{
+								"fontSrc": "/static/iconfont.ttf",
+								"text": "\ue618",
+								"fontSize": "26",
+								"color": "#303133",
+								"background": "rgba(0,0,0,0)",
+								"redDot": false
+							}
+						]
+					}
+				}
+			}
+		},
+
+		// 添加评论
+		{
+			"path": "components/hb-comment/add-comment",
+			"style": {
+				"navigationBarTitleText": "评论",
+				"enablePullDownRefresh": false
+			}
+		},
+
+		// 消息
+		{
+			"path": "pages/index/msg",
+			"style": {
+				"navigationBarTitleText": "消息",
+				// #ifdef MP
+				/* "navigationStyle": "custom", */
+				// #endif
+				"enablePullDownRefresh": false,
+				"onReachBottomDistance": 50,
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false,
+					"pullToRefresh": {
+						"support": true,
+						"color": "#0081ff",
+						"style": "default"
+					}
+				}
+			}
+		}
+	,
+		// 收藏
+		{
+			"path": "pages/index/favourite",
+			"style": {
+				"navigationBarTitleText": "收藏",
+				// #ifdef MP
+				/* "navigationStyle": "custom", */
+				// #endif
+				"enablePullDownRefresh": false,
+				"onReachBottomDistance": 50,
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false,
+					"pullToRefresh": {
+						"support": true,
+						"color": "#0081ff",
+						"style": "default"
+					}
+				}
+			}
+		},
+		// 信息搜索
+		{
+			"path": "pages/index/question",
+				"style": {
+						"navigationBarTitleText": "信息搜索",
+						// #ifdef MP
+						/* "navigationStyle": "custom", */
+						// #endif
+						"enablePullDownRefresh": false,
+						"onReachBottomDistance": 50,
+						"app-plus": {
+							"bounce": "none",
+							"titleNView": false,
+							"pullToRefresh": {
+								"support": true,
+								"color": "#0081ff",
+								"style": "default"
+							}
+						}
+					}
+		}
+		],
+	"subPackages": [
+		// 设置
+		{
+			"root": "pages/set",
+			"pages": [
+				// 设置
+				{
+					"path": "set",
+					"style": {
+						"navigationBarTitleText": "设置"
+					}
+				},
+				// 授权管理
+				{
+					"path": "authorization/list",
+					"style": {
+						"enablePullDownRefresh": true,
+						"navigationBarTitleText": "授权列表",
+						"app-plus": {
+							"pullToRefresh": {
+								"support": true,
+								"color": "#0081ff",
+								"style": "default"
+							}
+						}
+					}
+				},
+				// 设置支付密码
+				{
+					"path": "pay/setPassword",
+					"style": {
+						"navigationBarTitleText": "设置支付密码"
+					}
+				},
+				// 反馈列表
+				{
+					"path": "feedback/list",
+					"style": {
+						"enablePullDownRefresh": true,
+						"navigationBarTitleText": "意见反馈",
+						"app-plus": {
+							"pullToRefresh": {
+								"support": true,
+								"color": "#0081ff",
+								"style": "default"
+							}
+						}
+					}
+				},
+				// 反馈详情
+				{
+					"path": "feedback/detail",
+					"style": {
+						"navigationBarTitleText": "意见反馈详情"
+					}
+				},
+				// 反馈
+				{
+					"path": "feedback/feedback",
+					"style": {
+						"navigationBarTitleText": "意见反馈"
+					}
+				}
+				,
+				// 文章
+				{
+					"path": "article/index",
+					"style": {
+						"navigationBarTitleText": ""
+					}
+				},
+				// 帮助
+				{
+					"path": "helper/index",
+					"style": {
+						"navigationBarTitleText": ""
+					}
+				}
+			]
+		},
+
+
+		{
+			"root": "pages/question",
+			"pages": [
+				// 问题列表
+					{
+						"path": "index",
+						"style": {
+							"navigationBarTitleText": "信息搜索",
+							"enablePullDownRefresh": false,
+							"onReachBottomDistance": 50,
+							"app-plus": {
+								"bounce": "none",
+								"titleNView": false,
+										"pullToRefresh": {
+											"support": true,
+											"color": "#0081ff",
+											"style": "default"
+										}
+							}
+						}
+					},
+					// 问题详情
+					{
+						"path": "view",
+						"style": {
+							"navigationBarTitleText": "详细情况"
+						}
+					},
+					// 问题评论详情
+					{
+						"path": "commentDetail",
+						"style": {
+							"navigationBarTitleText": ""
+						}
+					},
+					// 在线发布信息帖子
+					{
+						"path": "add",
+						"style": {
+//							"navigationBarTitleText": "在线发布信息帖子"
+							"navigationStyle": "custom" ,// 隐藏系统导航栏
+							"navigationBarTextStyle": "white", // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
+							"navigationBarTitleText": "",
+							"enablePullDownRefresh": false,
+							"app-plus" : {
+								"bounce" : "none" // 取消APP端iOS回弹,避免与下拉刷新冲突 (可统一配在 'globalStyle')
+							}
+						}
+					},
+					// 在线消息
+					{
+						"path": "addMsg",
+						"style": {
+							"navigationBarTitleText": "在线消息"
+						}
+					},
+					// 问题编辑
+					{
+						"path": "edit",
+						"style": {
+							"navigationBarTitleText": "编辑问题"
+						}
+					},
+					// 我的问题
+					{
+						"path": "myQuestion",
+						"style": {
+							"navigationBarTitleText": "我的帖子",
+							"enablePullDownRefresh": true,
+							"onReachBottomDistance": 50,
+							"app-plus": {
+								"pullToRefresh": {
+									"support": true,
+									"color": "#0081ff",
+									"style": "default"
+								}
+							}
+						}
+					},
+
+					// 问题协议
+					{
+						"path": "protocol",
+						"style": {
+							"navigationBarTitleText": "用户协议"
+						}
+					}
+			]
+		},
+
+		// 公共
+		{
+			"root": "pages/public",
+			"pages": [
+				// 登录
+				{
+					"path": "login",
+					"style": {
+						"navigationBarTitleText": "登录",
+						// #ifdef MP
+						"navigationStyle": "custom", //自定义导航
+						// #endif
+						"app-plus": {
+							"titleNView": false,
+							"animationType": "slide-in-bottom"
+						}
+					}
+				},
+				// 登录类型
+				{
+					"path": "loginMethod",
+					"style": {
+						"navigationStyle": "custom" ,// 隐藏系统导航栏
+						"navigationBarTextStyle": "white", // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus" : {
+							"bounce" : "none" // 取消APP端iOS回弹,避免与下拉刷新冲突 (可统一配在 'globalStyle')
+						}
+					}
+				},
+				// 修改密码
+				{
+					"path": "password",
+					"style": {
+						"navigationBarTitleText": "忘记密码",
+						"navigationStyle": "custom",
+						"app-plus": {
+							"titleNView": false,
+							"animationType": "slide-in-bottom"
+						}
+					}
+				}
+			]
+		},
+		// 我的
+		{
+			"root": "pages/user",
+			"pages": [
+				// 用户资料
+				{
+					"path": "userinfo/userinfo",
+					"style": {
+						"navigationBarTitleText": "修改资料"
+					}
+				},
+				// 收藏
+				{
+					"path": "collection/collection",
+					"style": {
+						"enablePullDownRefresh": true,
+						"navigationBarTitleText": "收藏",
+						"app-plus": {
+							"pullToRefresh": {
+								"support": true,
+								"color": "#0081ff",
+								"style": "default"
+							}
+						}
+					}
+				},
+
+				// 支付
+				{
+					"path": "money/pay",
+					"style": {
+						"navigationBarTitleText": "支付",
+						"navigationStyle": "custom"
+					}
+				},
+				// 支付成功
+				{
+					"path": "money/success",
+					"style": {
+						"navigationBarTitleText": "支付成功",
+						"navigationStyle": "custom"
+					}
+				},
+				// 我的账户
+				{
+					"path": "account/account",
+					"style": {
+						"navigationBarTitleText": "我的账户"
+					}
+				},
+				// 账单明细
+				{
+					"path": "account/bill",
+					"style": {
+						"enablePullDownRefresh": true,
+						"navigationBarTitleText": "账单明细",
+						"app-plus": {
+							"pullToRefresh": {
+								"support": true,
+								"color": "#fa436a",
+								"style": "default"
+							}
+						}
+					}
+				},
+				// 积分详情
+				{
+					"path": "account/integral",
+					"style": {
+						"navigationBarTitleText": "积分详情"
+					}
+				},
+				// 粉丝&关注
+				{
+				  "path" : "fans/index",
+				  "style" :{
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false
+					}
+				},
+				// 消息
+				{
+				  "path" : "msg/index",
+				  "style" :{
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false
+					}
+				},
+				// 举报表单
+				{
+					"path": "report/report",
+					"style": {
+						"navigationBarTitleText": "举报"
+					}
+
+				},
+				// 举报详情
+				{
+					"path": "report/detail",
+					"style": {
+						"navigationBarTitleText": "举报详情"
+					}
+
+				},
+				//我的收藏
+				{
+					"path": "favourite/index",
+					"style": {
+						"navigationBarTitleText": "我的收藏",
+						"enablePullDownRefresh": false
+					}
+				},
+				// 个人中心
+				{
+					"path": "personal/index",
+					"style": {
+						"navigationStyle": "custom" ,// 隐藏系统导航栏
+						"navigationBarTextStyle": "white", // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus" : {
+							"bounce" : "none" // 取消APP端iOS回弹,避免与下拉刷新冲突 (可统一配在 'globalStyle')
+						}
+					}
+				 }
+            ]
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "泰道科技",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#f8f8f8"
+	}
+	,
+	"tabBar": {
+		"custom":true,
+		"color": "#C0C4CC",
+		"selectedColor": "#0081ff",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/index/question",
+				"text": "问答"
+			},
+			{
+				"pagePath": "pages/index/msg",
+				"text": "消息"
+			},
+			{
+				"pagePath": "pages/index/favourite",
+				"text": "收藏"
+			},
+			{
+				"pagePath": "pages/profile/profile",
+				"text": "我的"
+			}
+		],
+		//app 原生中间凸起按钮
+		"midButton": {
+			"width": "58px",
+			"height": "58px"
+			// "iconPath": "static/tab-question.png",
+			// "iconWidth": "58px",
+			// "backgroundImage":"static/tab-question-background.png"
+		}
+	}
+}
